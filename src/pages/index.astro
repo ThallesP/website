@@ -1,9 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { ExternalLink } from "@lucide/svelte";
+import { ExternalLink, Linkedin, Github, Twitter } from "@lucide/svelte";
 import ExperiencesSection from "../components/ExperiencesSection.svelte";
 import ProjectsSection from "../components/ProjectsSection.svelte";
 import OpenSourceSection from "../components/OpenSourceSection.svelte";
+
+const socials = [
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/thalles-passos/",
+        icon: Linkedin,
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/thallesp",
+        icon: Github,
+    },
+    {
+        name: "Twitter",
+        url: "https://twitter.com/thallescomumh",
+        icon: Twitter,
+    },
+];
 ---
 
 <Layout>
@@ -32,6 +50,21 @@ import OpenSourceSection from "../components/OpenSourceSection.svelte";
                             Notus Labs
                             <ExternalLink size={16} />
                         </a>
+                        <div class="flex gap-2 items-center mt-4">
+                            <span class="text-muted-foreground text-xl"
+                                >Follow me on:</span
+                            >
+                            {
+                                socials.map((social) => (
+                                    <a href={social.url} target="_blank">
+                                        <social.icon
+                                            size={20}
+                                            class="text-muted-foreground hover:text-foreground transition-colors"
+                                        />
+                                    </a>
+                                ))
+                            }
+                        </div>
                     </p>
                 </div>
             </div>

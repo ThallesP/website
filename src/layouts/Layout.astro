@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { ModeWatcher } from "mode-watcher";
+import ModeSwitch from "../components/ModeSwitch.svelte";
 ---
 
 <!doctype html>
@@ -16,7 +17,7 @@ import { ModeWatcher } from "mode-watcher";
 		<div class="container mx-auto min-h-screen w-screen">
 			<nav class="flex justify-end items-center py-2">
 				<ModeWatcher client:load defaultMode="dark" />
-				<!-- <ModeSwitch client:load /> for unknown reasons i'm getting hydration errors, looking into it -->
+				<ModeSwitch client:load />
 			</nav>
 
 			<slot />
