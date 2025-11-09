@@ -15,9 +15,15 @@ import ModeSwitch from "../components/ModeSwitch.svelte";
 	</head>
 	<body>
 		<div class="container mx-auto min-h-screen w-screen">
-			<nav class="flex justify-end items-center py-2">
-				<ModeWatcher client:load defaultMode="dark" />
-				<ModeSwitch client:load />
+			<nav class="flex justify-between items-center py-2">
+				<div class="flex items-center gap-6">
+					<a href="/" class="text-muted-foreground hover:text-foreground transition-colors">Home</a>
+					<a href="/experiences" class="text-muted-foreground hover:text-foreground transition-colors">Experiences</a>
+				</div>
+				<div class="flex items-center gap-2">
+					<ModeWatcher client:load defaultMode="dark" />
+					<ModeSwitch client:load />
+				</div>
 			</nav>
 
 			<slot />
